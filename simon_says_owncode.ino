@@ -48,7 +48,6 @@ void loop() {
     players_turn();
   } else {
     finish_game();
-    Serial.println("Papeaste al juego amigo, te amo");
   }
 }
 
@@ -174,13 +173,10 @@ int wait_button() {
 
 // El turno del jugador (un poco más complicadijillo)
 void players_turn(){
-  Serial.println(level);
   bool lost = false;
 
   for (int step = 0; step < level; step++){
     int btnPressed = wait_button();
-    //Serial.println(btni[btnPressed]);     // ¿Qué botón presionó? (muestra su pin)
-    //Serial.println(btni[sequence[step]]) ;// ¿Qué botón es el de la secuencia? (muestra su pin)
     
     if (btni[btnPressed] == btni[sequence[step]]){
       continue;
